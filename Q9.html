@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Q9</title>
+</head>
+
+<body>
+    <button id="login">Login</button>
+    <button id="logout">Logout</button>
+    <h1 id="status"></h1>
+</body>
+<script>
+
+    let status = document.getElementById("status")
+    status.innerText="User has Not logged In."
+
+    if(localStorage.getItem("isLogin") == "true") {
+        status.innerText = "User is logged in."
+    }
+
+    login.addEventListener("click", () => {
+        localStorage.setItem("isLogin", "true")
+        status.innerText = "User is logged in."
+    })
+    logout.addEventListener("click", () => {
+        localStorage.removeItem("isLogin")
+        status.innerText = "User has Not logged In."
+    })
+
+  
+</script>
+
+</html>

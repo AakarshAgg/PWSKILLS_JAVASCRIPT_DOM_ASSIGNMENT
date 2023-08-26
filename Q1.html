@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript DOM Q1</title>
+</head>
+
+<body>
+    <h1>Update Profile Picture</h1>
+    <input type="file" id="input-file">
+    <h3>Your Profile Picture</h3>
+    <img src="" alt="No Profile Picture" id="get-image">
+</body>
+<script>
+    let inputfile = document.getElementById("input-file")
+    let showimage = document.getElementById("get-image")
+
+
+    inputfile.addEventListener("change", function () {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            showimage.src = e.target.result;
+        }
+
+        reader.readAsDataURL(inputfile.files[0])
+    })
+</script>
+
+</html>

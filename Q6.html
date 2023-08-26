@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Q6</title>
+</head>
+
+<body>
+    <div id="container"></div>
+</body>
+<script>
+    let lang = ["javascript", "java", "python", "C++"]
+    let cont = document.getElementById("container")
+    let head = document.createElement("h4")
+    head.innerText = "Which is favourite programming language:"
+    cont.appendChild(head)
+    let sels = document.createElement("select")
+    head.appendChild(sels)
+    for (let i = 0; i < lang.length; i++) {
+        let op = document.createElement("option")
+        sels.appendChild(op)
+        op.innerText = lang[i]
+    }
+
+</script>
+
+</html>

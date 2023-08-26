@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript DOM Q2</title>
+</head>
+
+<body>
+    <h1 id="head">This is Light Mode</h1>
+    <button id="button">Toggle Theme</button>
+</body>
+<script>
+    let btn = document.getElementById("button")
+    let head=document.getElementById("head")
+    let check = true;
+    btn.addEventListener("click", function () {
+        if (check) {
+            document.body.style.backgroundColor = "black"
+            head.style.color="#ffffff"
+            head.innerText="This is Light Mode"
+            check = false;
+        } else {
+            document.body.style.backgroundColor = "white"
+            head.style.color="black"
+            head.innerText="This is Dark Mode"
+            check=true;
+        }
+    })
+</script>
+
+</html>

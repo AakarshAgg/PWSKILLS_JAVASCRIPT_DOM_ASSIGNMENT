@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Q7</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Search for items" id="search"><br>
+    <h2>Results:</h2>
+    <ul id="listitem">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Tailwind CSS</li>
+        <li>GitHub</li>
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    let input = document.getElementById("search")
+    let list = document.querySelectorAll("li")
+    
+    input.addEventListener("input", function () {
+        const filterValue = input.value.toLowerCase()
+        for(let i=0;i<list.length;i++){
+            let listItem=list[i].innerText.toLowerCase()
+         if(listItem.includes(filterValue)){
+            list[i].style.display="block";
+         }else{
+            list[i].style.display="none";
+         }   
+        }
+    })
+</script>
+
+</html>
